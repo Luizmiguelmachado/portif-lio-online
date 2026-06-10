@@ -25,15 +25,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 15px;
 
-    width: 90%;
-    padding: 1%;
+    width: 84%;
+    max-width: 1200px;
+    padding: 10px 20px;
 
     border: 1px solid #313131;
     border-radius: 10px;
     background-color: rgba(21, 21, 21, 0.5);
     backdrop-filter: blur(12px);
+    z-index: 1000;
 }
 
 .cabecalho .LM {
@@ -57,7 +59,6 @@ body {
 .cabecalho .navegacao {
     display: flex;
     gap: 1.5rem;
-    flex-wrap: wrap;
 }
 .cabecalho .navegacao div {
     position: relative;
@@ -66,19 +67,20 @@ body {
 }
 .cabecalho .navegacao div a {
     text-decoration: none;
-    color: #313131;
+    color: #8c8c8c;
     cursor: pointer;
+    transition: color 0.3s;
 }
 .cabecalho .navegacao div .bolinha {
     display: flex;
     position: absolute;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
     top: 100%;
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     background-color: var(--laranja);
-    border-radius: 100%;
-
+    border-radius: 50%;
 }
 .cabecalho .navegacao div .bolinha-desativado{
     display: none;
@@ -93,7 +95,7 @@ body {
 
 .config{
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -102,22 +104,23 @@ body {
     outline: none;
     padding: 0;
     cursor: pointer;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 }
 
 .vamos-conversar{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-color: transparent;
     color: white;
     border: var(--laranja) 1px solid;
     border-radius: 30px;
-    padding: 10px 10px;
+    padding: 8px 16px;
     gap: 0.5rem;
     white-space: nowrap;
     align-items: center;
     fill: var(--laranja);
+    font-size: 0.9rem;
     transition: 
         background-color 0.3s ease,
         color 0.3s ease,
@@ -146,11 +149,13 @@ body {
 .outros-idiomas{
     display: none;
     position: absolute;
-    right: 25%;
+    right: 0;
+    top: 100%;
     background-color: black;
-    border: #313131 1px  solid;
-    padding: 25%;
-    border-radius: 10px 0px 10px 10px;
+    border: #313131 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 5px;
 }
 
 @media (max-width: 900px){
@@ -162,21 +167,14 @@ body {
 /*Fim Cabaçalho*/
 
 /*Corpo 1*/
-
-.corpo1{
+.corpo1, .corpo2, .corpo3 {
     display: flex;
-    min-height: 600px;
+    min-height: 100vh;
     justify-content: space-between;
     align-items: center;
-
-    flex-wrap: wrap;
-
-    color: white;
+    padding: 120px 8% 60px 8%; /* Padding superior maior para não cobrir o conteúdo com o header fixo */
     background-color: black;
-    min-height: 100vh;
-    padding: 2.5%;
-    padding-right: 5%;
-    padding-left: 5%;
+    color: white;
 }
 
 .titulo-subtitulo{
@@ -289,3 +287,307 @@ body {
 }
 
 /*Fim Corpo 1*/
+
+/*Copor 2*/
+.corpo2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3vh;
+    background:
+        linear-gradient(
+            160deg,
+            #5a5a5a 0%,
+            #000000 41%,
+            #0a0a0a 58%,
+            #2b2b2b 100%
+        );
+
+    background-color: black;
+}
+
+.corpo2 div{
+    display: flex;
+}
+
+.titulo-geral .titulo {
+    gap: 10px;
+}
+.titulo-geral .titulo p{
+    font-size: 200%;
+    margin: 0;
+}
+.titulo-geral .titulo .machado{
+    color: var(--laranja);
+}
+
+.descricao-corpo2{
+    width: 100%;
+    justify-content: space-between;
+    gap: 5%;
+}
+.skills-sociais, .skills-tecnicas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5vh;
+    justify-content: space-between;
+}
+.skills-sociais button {
+    display: flex;
+    flex: 1 250px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: var(--laranja) 1px solid;
+    border-radius: 10px;
+    padding: 1%;
+    gap: 10px;
+    font-size: 100%;
+    align-items: center;
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+.skills-sociais button:hover {
+    background-color: var(--laranja);
+    color: black;
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+.skills-sociais button svg{
+    background-color: var(--laranja);
+    width: 6vh;
+    height: auto;
+    padding: 2%;
+    border-radius: 2.5px;
+    fill: black;
+}
+.skills-sociais button:hover svg{
+    background-color: black;
+    fill: var(--laranja);
+    transform: translateY(-2px);
+}
+
+/*Fim Corpo 2*/
+
+/*Corpo 3*/
+
+.corpo3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5vh;
+}
+
+.descricao-corpo3 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os cards (tanto lateral quanto vertical) */
+    width: 100%;
+}
+
+
+.card-corpo3 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 25px;
+    border: 1px solid #313131;
+    border-radius: 12px;
+    background-color: #0a0a0a;
+    transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    height: min-content;
+}
+
+.card-corpo3:hover {
+    border-color: var(--laranja);
+    transform: translateY(5px);
+    cursor: pointer;
+
+    .titulo-corpo3 div svg{
+        color: var(--laranja);
+    }
+}
+
+
+.titulo-corpo3 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.titulo-corpo3 div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5%;
+}
+
+
+
+.titulo-corpo3 div p {
+    color: var(--laranja);
+}
+
+.titulo-corpo3 div svg{
+    color: #313131;
+}
+
+.linha {
+    height: 1px;
+    background-color: #313131;
+    width: 100%;
+}
+
+.explicacao-corpo3-desativado{
+    display: none;
+}
+
+.explicacao-corpo3{
+    display: flex;
+}
+.explicacao-corpo3 p, .data{
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+/*Fim Corpo 3*/
+
+/*Habilidades Técnicas*/
+
+.descricao-corpo4 {
+    display: flex;
+    height: 300px;
+    
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-tecnicas {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content:start;
+    gap: 15px;
+    width: 100%;
+    padding: 25px;
+    height: 100%; 
+    border: 1px solid #313131;
+    border-radius: 12px;
+    background-color: #0a0a0a;
+    transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+
+
+.skills-tecnicas:hover {
+    border-color: var(--laranja);
+    transform: translateY(5px);
+    cursor: pointer;
+
+    .titulo-corpo4{
+        color: var(--laranja);
+    }
+}
+
+.skills-tecnicas .titulo-skills-tecnicas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-tecnicas .softwares{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.skills-tecnicas .softwares div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.skills-tecnicas .softwares div div{
+    display: flex;
+    padding: 5px;
+    background-color: var(--laranja);
+    border-radius: 3px;
+}
+.skills-tecnicas .softwares div div svg{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background-color: var(--laranja);
+    color: var(--laranja);
+}
+
+
+/*Fim Habilidades Técnicas*/
+
+
+@media (max-width: 992px) {
+    .cabecalho .navegacao {
+        display: none !important; /* Mantido conforme seu padrão antigo */
+    }
+
+    .corpo1 {
+        flex-direction: column-reverse; /* Foto fica no topo em dispositivos móveis */
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .titulo-subtitulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botoes-corpo1, .outros-contatos {
+        justify-content: center;
+    }
+
+    .descricao-corpo2 {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+}
+
+/* Telas Pequenas (Celulares) */
+@media (max-width: 576px) {
+    .cabecalho {
+        width: 95%;
+        padding: 8px 12px;
+    }
+
+    .cabecalho .LM {
+        font-size: 24px;
+    }
+
+    .vamos-conversar {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .corpo1, .corpo2, .corpo3 {
+        padding: 100px 5% 40px 5%; /* Reduz as margens laterais em telas pequenas */
+    }
+
+    .botoes-corpo1 {
+        width: 100%;
+        flex-direction: column; /* Botões empilhados no celular */
+    }
+
+    .curriculo, .contato {
+        width: 100%;
+        justify-content: center;
+    }
+}
